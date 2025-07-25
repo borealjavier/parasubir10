@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quincho Brito El Japones - Alquiler de Quincho</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background: linear-gradient(135deg, #8B4513, #D2691E);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+    .hero-section {
+        background: #f4f4f4;
+        padding: 3rem 0;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 2rem;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .features {
+        background: white;
+        padding: 3rem 0;
+    }
+
+    .features h2 {
+        text-align: center;
+        color: #8B4513;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .feature-card {
+        background: #f9f9f9;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .feature-card h3 {
+        color: #8B4513;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .feature-card p {
+        color: #666;
+    }
+
+    .pricing {
+        background: #8B4513;
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .pricing h2 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .price-card {
+        background: white;
+        color: #333;
+        padding: 2rem;
+        border-radius: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .price {
+        font-size: 2.5rem;
+        color: #8B4513;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .location {
+        background: #fff8e1;
+        padding: 2rem 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .location h2 {
+        color: #8B4513;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .location a {
+        color: #4a7c59;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+
+    .location a:hover {
+        text-decoration: underline;
+    }
+
+    .rental-info {
+        background: #fff3f3;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .rental-info h2 {
+        color: #b00020;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .rental-info p {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .rental-info ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .rental-info ul li {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .rental-info ul li::before {
+        content: "✅ ";
+        color: #8B4513;
+        font-weight: bold;
+    }
+
+    .payment-methods {
+        background: white;
+        padding: 2rem 0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+    }
+
+    .payment-methods h3 {
+        color: #8B4513;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .payment-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+    }
+
+    .payment-list span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .info-section {
+        background: #f9f4f4;
+        padding: 2rem 0;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    .info-section h3 {
+        color: #8B4513;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .info-section p {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+        text-align: center;
+    }
+
+    .contact {
+        background: #f4f4f4;
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .contact h2 {
+        color: #8B4513;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .whatsapp-btn {
+        display: inline-block;
+        background: #25D366;
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 1rem;
+        transition: background 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+        background: #128C7E;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🏡 Quincho Brito El Japones</h1>
+            <p>El lugar perfecto para tus celebraciones y eventos</p>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="gallery">
+                <img src="https://gitlab.com/quincho-web/quincho-web2025/-/raw/2d457c9dcfa24596eba237cb07117ecb54893238/bar_ok_2025.png" alt="Barra quincho">
+                <img src="https://gitlab.com/quincho-web/quincho-web2025/-/raw/main/pasillo_corregido.jpeg" alt="Pasillo corregido">
+                <img src="https://gitlab.com/quincho-web/quincho-web2025/-/raw/main/pileta_con_plantas.jpeg" alt="Pileta con plantas">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98fKcBBgYGBgcGBwgIBwoLCgsKDw4MDA4PFhAREBEQFiIVGRUVGRUiHiQeHB4kHjYqJiYqNj40MjQ+TERETF9aX3x8p//CABEIAi8DRwMBIgACEQEDEQH/xAAxAAACAwEBAQAAAAAAAAAAAAAAAQIDBAUGBwEBAQEBAQAAAAAAAAAAAAAAAAECAwT/2gAMAwEAAhADEAAAAvKAAAAAAAAAAAAAAAADE4Q1QAAAAAAAAAAAAAAAAAAADTQAAAAAAAAAAAAAAAMQAAAAAAAEoQwQ0DTBCG0GuitSgGoDUAFAADUAFAAAAAAAAAAAAAAAAAAAANxcIlGgAAAAAAAAAAAAAAAAABpoAAAAAAAAAAAAABiAAAAAAAAAAJA8oklSAAAGmJNABQAAAAAABKMAFAAAA0AAAAAAAAAAAAAAADlAgJwACgAAAAAAAAAAAAAAGmgAAAAAAAAAAAAGCAAAAAAAAABoLHWZTi0JMoAGIEBQAAAAAAAEAADCw6c+fTlPquXkrtTOFLsTOC/Q0WcOPorDzC9NTZ5870jz5389cg7VKcs62OzKdTOYzZQVSkrIqyJECgABoAAAAAAAAAAaaAAAAAAAAAAAGCAAAAAAAAAAAGgbiRJwkCYIciCYIAABoAAotqcIAJwAAPQR7/D83onLhXbz23xJy9yzh2R1pcmw6k+RYdaPJtrXdz5Jtppzmx89lhCmqtlGY10pEJCM+krsz3aY2Y8/dyWYBdKa5BKPTkAUAAAAAADTBDEROIhoBioAAAGgAAAAAAAABgIBuMoROyWhzSRTVAAACGgAAGICgAAAalES0X3QS8nfFz+9LU83H1EtZ8lR7dL4u32FlnkIezrrxsfXQl8lD16TxsPaV14x+kss8uve" alt="Pasillo sin nada" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); height: 250px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>¿Qué incluye nuestro quincho?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🚿 Dos Baños Completos</h3>
+                    <p>Baños modernos y limpios para la comodidad de todos tus invitados</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔥 Asador y Horno Pizzero</h3>
+                    <p>Asador tradicional y horno pizzero para preparar las mejores comidas</p>
+                </div>
+                <div class="feature-card">
+                    <h3>❄️ Freezer para Bebidas</h3>
+                    <p>Freezer disponible para mantener tus bebidas frías</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏠 Patio Techado</h3>
+                    <p>Amplio espacio cubierto para disfrutar sin importar el clima</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌞 Patio al Aire Libre</h3>
+                    <p>Espacio abierto para actividades al aire libre y relajación</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏊‍♀️ Pileta</h3>
+                    <p>Pileta limpia y mantenida para refrescarse y divertirse</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎵 Música y Karaoke</h3>
+                    <p>Sistema de sonido y TV para karaoke, ¡diversión garantizada!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🪑 Mobiliario Completo</h3>
+                    <p>Mesas, sillas y manteles incluidos, todo listo para usar</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💨 Ventiladores Industriales</h3>
+                    <p>Mantenemos el lugar fresco con ventiladores industriales</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Capacidad para 80 Personas Aprox.</h3>
+                    <p>Espacio amplio para eventos grandes</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🍽️ Servicio de Catering</h3>
+                    <p>Consultá por nuestro servicio de catering para eventos con comidas tipo lunch</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⏰ Extensión de Horas</h3>
+                    <p>Consultar por extensión de horas en caso de ser posible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rental-info">
+        <div class="container">
+            <h2>Información de Alquiler</h2>
+            <p><strong>5 Horas</strong></p>
+            <p>Duración del alquiler</p>
+            <p>Horarios flexibles según disponibilidad</p>
+            <h3>Incluye:</h3>
+            <ul>
+                <li>Todos los servicios mencionados</li>
+                <li>Mobiliario completo</li>
+                <li>Limpieza previa</li>
+                <li>Mantenimiento de pileta</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h3>Información Importante sobre el Alquiler</h3>
+        <p>Horarios de alquiler: de 13:00 a 18:00 o de 22:00 a 3:00 am.</p>
+        <p>Se debe dejar una seña de $30.000 para reservar el lugar.</p>
+        <p>Se cobra un seguro de $15.000 en caso de daños, que se reintegra una vez finalizado y controlado el evento.</p>
+        <p>El pago total del alquiler debe realizarse 48 horas antes de la fecha seleccionada.</p>
+        <p>Si se cancela, no se reintegra la seña.</p>
+        <p>Se puede modificar la fecha con al menos dos semanas de anticipación.</p>
+        <p>El lugar se entrega una hora antes para que puedas traer bebidas o acomodar lo que desees.</p>
+        <p style="color: red; font-weight: bold; text-align: center;">
+            NO ESTÁ PERMITIDO TIRAR PAPELES PICADOS NI ARINAS.
+        </p>
+        <p>Para ver el alquiler en persona, consultar cita previa.</p>
+    </section>
+
+    <section class="payment-methods">
+        <h3>Medios de Pago Aceptados</h3>
+        <div class="payment-list">
+            <span>💳 Transferencia Bancaria</span>
+            <span>💵 Efectivo</span>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h3>Reservas</h3>
+        <p>Las reservas se realizan por fechas específicas. Consultá disponibilidad por WhatsApp.</p>
+        <h3>Horarios</h3>
+        <p>Horarios flexibles de 5 horas consecutivas. Coordinamos según tu preferencia.</p>
+        <h3>Condiciones</h3>
+        <p>Se entrega limpio y equipado. Se solicita mantener el orden y cuidado de las instalaciones.</p>
+        <h3>Consultas</h3>
+        <p>Todas las consultas y reservas se gestionan por WhatsApp para una atención rápida y personalizada.</p>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>¡Reservá Ahora!</h2>
+            <p>Contactanos por WhatsApp para consultar disponibilidad y hacer tu reserva</p>
+            <a href="https://wa.me/5493816706176?text=Hola!%20Me%20interesa%20alquilar%20el%20quincho.%20¿Podrían%20brindarme%20información%20sobre%20disponibilidad,%20precios%20y%20condiciones?" class="whatsapp-btn">
+                📱 Consultar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Quincho Brito El Japones. Todos los derechos reservados.</p>
+            <p>Creado para brindar los mejores momentos en familia y con amigos</p>
+        </div>
+    </footer>
+</body>
+</html>
